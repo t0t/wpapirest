@@ -1,0 +1,85 @@
+// Footer principal
+.main-footer {
+    flex-basis: 100%;
+    text-align: center;
+    line-height: 3;
+    color: darken($color-base, 25);
+    @media screen and (max-width: $bp3) {}
+    @media screen and (min-width: $bp3) {}
+    img[src$=".svg"] {
+        @media screen and (max-width: $bp3) {}
+    }
+    input[type="submit"] {}
+    order: 3;
+}
+
+.main-footer__header {}
+
+.main-footer__social {
+    @media all and (min-width: $bp3) {}
+
+    a {
+        &:visited {}
+        &:hover {}
+        &::before {}
+    }
+}
+
+.main-footer__credits {
+    @extend %text-center;
+     @include font-size(13);
+    aside {}
+    a, a:visited {}
+    a:hover {}
+    a i:hover {}
+}
+
+.main-footer__brand {
+    address {
+        @include font-size(15);
+    }
+    @media all and (min-width: $bp3) {}
+    img {}
+}
+
+.main-footer__brand__name {}
+
+.main-footer__adicional {}
+
+.main-footer__searchform {
+    label {
+        @extend %text-center;
+
+        input {
+            @extend %text-center;
+            display: inline;
+        }
+    }
+
+    @media all and (min-width: $bp3) {
+        // @include order(1);
+        @include max-width(300px);
+        // background-color: pink;
+    }
+
+
+
+
+
+    .search-form
+    .search-submit {
+        display: none;
+    }
+
+    .screen-reader-text {
+        display: none;
+    }
+
+    input {
+        width: 60%;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+}

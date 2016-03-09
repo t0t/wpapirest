@@ -1,0 +1,32 @@
+.alert {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  flex: 1 100%;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: $padding_base/2;
+  margin-right: $padding_base/2;
+  margin-left: $padding_base/2;
+  padding: 20px;
+  a {
+    color: $color-alt2;
+    padding-left: $padding_base;
+    padding-right: $padding_base;
+    &:hover {
+      color: darken($color-alt2, 50);;
+    }
+  }
+}
+  .alert-info {
+    background-color: $color-white;
+  }
+  .alert-error {
+    background-color: pink;
+  }
+  .alert-success {
+    background-color: $color-alt2;
+    a {
+      color: darken($color-alt2, 20);
+    }
+  }

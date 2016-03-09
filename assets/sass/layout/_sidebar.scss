@@ -1,0 +1,16 @@
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .sidebar-vertical {
+    width: 20%;
+    background-color: $color-alt;
+  }
+  .sidebar-horizontal {
+    width: 100%;
+    background-color: $color-alt2;
+    justify-content: space-around;
+    padding-bottom: ($padding_base/2);
+
+  }

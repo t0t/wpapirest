@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    $WIDGETS
+\*------------------------------------*/
+
+.widget {
+  // margin: 0 $padding_base/4;
+  flex-basis: 300px; 
+}
+
+.widget-title {
+  text-align: center;
+  line-height: inherit;
+}
+
+.widget--external-links {}
+
+.widget--social {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.widget--wp {}
+
+.widget--posts {}
+
+.widget--pages {}
+
+.widget--tags {}

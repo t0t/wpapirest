@@ -1,0 +1,53 @@
+
+// PLUGINS
+//Rev Slider
+// .rev_slider_wrapper {
+//  z-index: 0;
+// }
+// Contact Form 7
+.wpcf7-form-control-wrap {}
+
+.your-name {}
+
+input {
+    .wpcf7-form {}
+    .wpcf7-form-control {}
+    .wpcf7-text {}
+    .wpcf7-validates-as-required {}
+    .wpcf7-textarea {}
+    .wpcf7-submit {}
+    .wpcf7-response-output {}
+    .wpcf7-display-none {}
+}
+
+.wpcf7 {
+    // display: table-cell;
+
+    img {
+        width: auto;
+    }
+
+    // que no hayan sorpresas...
+    @media screen and (max-width: $bp3) {
+        // display: table-row;
+    }
+}
+
+// Mappress
+.mapp-canvas {
+    border-radius: 10px;
+    @include max-width($bp0);
+}
+
+.mapp-iw {
+    p, a {
+        color: $color-base;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: $color-base;
+    }
+}
+
+.mapp-directions, .mapp-map-links, .mapp-dialog {}

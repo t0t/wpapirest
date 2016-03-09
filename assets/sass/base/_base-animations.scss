@@ -1,0 +1,39 @@
+// Animacion logo intro
+@keyframes fade {
+  0% {
+    @include opacity(0);
+    // @include translate(30px, 60px);
+    // @include rotate(180deg);
+  }
+  100% {
+    @include opacity(1);
+    // @include translate(0, 0);
+    // @include rotate(0deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    // @include opacity(0);
+    // @include translate(30px, 60px);
+    @include rotate(0deg);
+  }
+  50% {
+    // @include opacity(1);
+    // @include translate(0, 0);
+    @include rotate(-1deg);
+  }
+}
+@keyframes slideup {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.efecto--stroke-dashoffset {
+  @include animation(efecto-stroke-dashoffset, 0s, 10s, ease, infinite);
+}

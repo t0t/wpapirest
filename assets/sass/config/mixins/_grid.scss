@@ -1,0 +1,76 @@
+
+// Esto es una obra maestra de https://github.com/HugoGiraudel !!
+
+// Grid configuration
+$grid-gutter     :  6px !default;
+$grid-columns    :    12 !default;
+$grid-children   : 'div' !default;
+$grid-breakpoint :  48em !default;
+
+// Creating placeholders
+// For all columns of the grid
+@for $i from 1 through $grid-columns {
+  %grid-col-#{$i} {
+    $multiplier: $i / $grid-columns;
+    width: calc(100% * #{$multiplier} - #{$grid-gutter} * (1 - #{$multiplier}));
+  }
+}
+
+// Parent, grid wrapper
+%grid-parent {
+  overflow: hidden;
+}
+  
+// Children, grid columns
+%grid-child {
+  float: left;
+  margin-right: $grid-gutter;
+}
+
+// Last child from grid
+%grid-last-child {
+  margin-right: 0;
+}
+
+// Instanciate placeholder inside a media query
+// So it can be extended from within the same media query elsewhere in the CSS
+// This aims at reducing CSS output by merging all those rules
+@media (max-width: $grid-breakpoint) {
+  %grid-fallback > #{$grid-children} {
+    width: 100% !important;
+    float: none;
+    margin-right: 0;
+  }
+}
+
+
+// Mixin to be called on parent
+// Will use :nth-of-type selectors to define columns width
+// e.g. grid(1, 2, 4, 5) will result in
+// | 1 |  2   |     4      |       5       |
+@mixin grid($cols...) { 
+  // Clearing inner floats
+  @extend %grid-parent;
+
+  // Direct children (default 'div')
+  > #{$grid-children} { 
+    @extend %grid-child;
+    
+    // Setting columns
+    @for $i from 1 through length($cols) {
+      &:nth-of-type(#{$i}n) {
+        @extend %grid-col-#{nth($cols, $i)};
+      }
+    }
+      
+    // Cancelling right margin on last element from each row
+    &:nth-of-type(#{length($cols)}n) {
+      @extend %grid-last-child;
+    }
+  }
+
+  // Small screens
+  @media (max-width: $grid-breakpoint) {
+    @extend %grid-fallback;
+  }
+}

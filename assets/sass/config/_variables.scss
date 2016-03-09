@@ -1,0 +1,58 @@
+// Breakpoints
+$bp0: 1460px;
+$bp1: 1280px;
+$bp2: 900px;
+$bp2_3: 756px;
+$bp3: 450px;
+// $bp3: 376px;
+
+// Portait iphone6
+$bp3_4: 320px;
+$bp4: 250px;
+
+// Colors
+$color-white: rgb(255, 255, 255);
+$color-black: rgb(0, 0, 0);
+$color-black-alpha: transparentize($color-black, 0.5);
+
+$color-base: rgb(224, 219, 215);
+// $color-base: rgb(224, 219, 215);
+// $color-base: rgb(217, 206, 190);
+$color-base-alpha: transparentize($color-base, 0.5);
+$color-alt: rgb(255, 186, 104);
+$color-alt2: rgb(171, 209, 178);
+// $color-alt2: rgb(104, 186, 104);
+$color-alt3: lighten($color-base, 5);
+// $color-alt: rgb(249, 203, 203);
+// $color-alt: rgb(210, 235, 230);
+$color-black-suave: rgba(0, 0, 0, 0.3);
+$color-white: rgb(255, 255, 255);
+$color-white-alpha: rgba(255, 255, 255, .4);
+$color-compl: rgb(176, 55, 62);
+$color-alert: red;
+$color-success: green;
+$site-main-bgcolor: lighten($color-base, 10);
+
+// Base
+$basefontsize: 16;
+$padding_base: 50px;
+$line-height-base: 1.5;
+$fallback-extension: png;
+$image-path: "assets/img/" !default;
+$textcolor: $color-black;
+$baseletterspacing: 1px;
+$inputborderwidth: 1px;
+$inputborderstyle: solid;
+$inputborder: $color-base;
+$radius: 10px;
+
+// Images
+$image-path: "assets/img/";
+
+// $fuentes
+$googlefont: "http://fonts.googleapis.com/css?family=Molengo";
+$codefont: "Courier New", monospace;
+$basefont: "Molengo", sans-serif;
+$altfont: $basefont;
+$baseheadingfont: $basefont;
+$baseheadingfontweight: 400;

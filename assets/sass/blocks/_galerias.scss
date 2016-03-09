@@ -1,0 +1,39 @@
+// Galeria
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 0;
+    background-color: $color-alt2;
+    a {}
+    
+}
+.galeria__title {}
+.galeria__description {}
+
+.galeria__figure {
+    position: relative;
+    
+    a {
+        display: block;
+    }
+
+    img {
+        &:hover {}
+    }
+
+    @media screen and (max-width: $bp3) {}
+
+    .galeria__caption {
+        position: absolute;
+        top: 0;
+        color: $color-white;
+        padding-left: 8px;
+        padding-top: 3px;
+        // text-shadow: 0px 0px 1px $color-black;
+        // fallback + progressive enhancement
+        @include font-size(14);
+        &::after {}
+        &:hover::after {}
+    }
+}

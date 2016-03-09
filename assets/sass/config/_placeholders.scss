@@ -1,0 +1,32 @@
+// $placeholders
+
+%display-block {
+    display: display-block;
+}
+
+%text-center {
+    text-align: center;
+}
+
+%text-right {
+    text-align: right;
+}
+
+%text-left {
+    text-align: left;
+}
+%no-padding {
+    padding: 0;
+}
+
+%no-margin {
+    margin: 0;
+}
+/**
+* Escondemos el texto solo VISUALMENTE
+*/
+%hide-text {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}

@@ -1,2 +1,8 @@
-.git
+node_modules
 .DS_Store
+.git
+*.map
+style.css.map
+assets/sass/.sass-cache
+assets/sass/.sass-cache/**
+assets/sass/.sass-cache/**/*.scssc

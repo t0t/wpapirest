@@ -1,0 +1,115 @@
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+}
+  .product-images,
+  .product-summary {
+    flex-grow: 1;
+    @media screen and (min-width: 800px) {
+      flex: 0 1 49%;
+    }
+  }
+  .product-summary {
+    background-color: $color-white;
+    padding: ($padding_base/2);
+  }
+  .product-thumbnails {
+    margin-top: 10px;
+    img {
+      max-width: 50px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+  }
+
+  .product-related {
+    width: 100%;
+    background-color: $color-alt2;
+    h2 {
+      text-align: center;
+      padding-top: $padding_base/2;
+      margin-bottom: 0;
+    }
+    .posts-wrap {
+      margin-bottom: 0;
+    }
+    .posts-wrap-item {
+      margin: 0;
+    }
+  }
+// $product
+// [class*=product] {
+//     &:hover {}
+// }
+.product--features {
+  margin-left: $padding_base;
+  margin-right: $padding_base;
+  margin-bottom: $padding_base;
+  flex: 100%;
+  order: 3;
+
+  .main-aside & {
+    padding: 0;
+    position: absolute;
+    bottom: 50px;
+    background: transparent;
+    color: $color-white;
+    display: none;
+  }
+  .main-aside &:hover {
+    display: block;
+  }
+
+    dt,
+    li {
+      // text-transform: uppercase;
+      font-weight: bold;
+      @include font-size(15);
+      margin-right: 10px;
+    }
+
+    dd {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+.product--features__header {
+    // margin: ($padding_base/3) 0;
+    text-align: left;
+    // text-transform: uppercase;
+}
+
+.product--features__list {
+    @include transition(0.3s);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product--features__list__item {
+
+    @media screen and (min-width: $bp3) {}
+    // @include transition(0.3s);
+
+    &:hover {
+        .product__list__item__caption {}
+    }
+
+    .product__list__item__caption {
+        @include transition(0.3s);
+        @include max-width(250px);
+        text-align: center;
+        padding: $padding_base;
+        color: $color-white;
+
+        @media screen and (min-width: $bp3) {
+            opacity: 0;
+            display: none;
+            color: $color-black;
+            background-color: $color-base;
+        }
+    }
+}

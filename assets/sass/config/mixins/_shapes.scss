@@ -1,0 +1,16 @@
+// tamanos cajas
+@mixin size($width, $height) {
+    width: $width;
+    min-height: $height;
+}
+
+// cuadrados
+@mixin square($size) {
+    @include size($size, $size);
+}
+
+// circulos
+@mixin circle($size: 100px) {
+    border-radius: 100%;
+    @include square($size);
+}

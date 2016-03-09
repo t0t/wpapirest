@@ -1,0 +1,120 @@
+.woocommerce {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.product-remove {
+ padding-left: 0;
+}
+.checkout {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cart-actionform {
+
+}
+.cart-collaterals {
+  // margin-top: $padding_base;
+}
+.cart-actionform,
+.cart-collaterals {
+  flex-grow: 1;
+  padding-top: ($padding_base/2);
+  padding-bottom: ($padding_base/2);
+  @media screen and (min-width: 700px) {
+    padding: $padding_base;
+  }
+  @media screen and (min-width: 1100px) {
+    flex: 0 1 49%;
+  }
+}
+.attachment-shop_thumbnail {
+  min-width: 20px;
+  @media screen and (min-width: 700px) {
+    min-width: 75px;
+    padding: 4px;
+    background-color: $color-alt;
+  }
+}
+.product-thumbnail {}
+.order_review_heading {}
+.product-total {
+  width: 50%;
+}
+.woocommerce-checkout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: $padding_base;
+  background-color: white;
+  h3 {
+    margin-top: 0;
+    margin-bottom: ($padding_base / 2);
+  }
+  p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.woocommerce-checkout-review-order,
+.customer_details {
+  flex-grow: 1;
+  @media screen and (min-width: 1100px) {
+    flex: 0 1 49%;
+  }
+}
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.product_meta {
+  margin-top: ($padding_base/2);
+}
+.woocommerce-result-count {
+  color: $color-base;
+}
+
+.reset_variations {
+  color: $color-alt2;
+  text-transform: uppercase;
+}
+
+.woocommerce-breadcrumb {
+  flex-basis: 100%;
+  padding-bottom: $padding_base/2;
+  // background-color: $site-main-bgcolor;
+}
+
+*[data-attribute_name] {
+  margin-left: $padding_base/2;
+  margin-right: $padding_base/2;
+}
+
+.woocommerce-ordering,
+.woocommerce-result-count {
+  // display: none;
+}
+
+.onsale {
+  position: absolute;
+  background-color: $color-white;
+  margin-top: $padding_base/4;
+  margin-left: $padding_base/4;
+  padding: $padding_base/4;
+  border-radius: $padding_base/2;
+}
+
+.price {
+  text-align: center;
+  width: 100%;
+  display: block;
+  color: $color-alt2;
+  max-width: 140px;
+}
+
+.remove-item {
+  @include font-size(40);
+  display: block;
+}

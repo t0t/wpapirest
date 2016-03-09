@@ -1,0 +1,77 @@
+// Componente para un mini grid...
+@media all and (min-width: $bp3) {
+    .grid, .grid-form, .grid-content {
+        @include flexbox;
+        @include flex-flow(row wrap);
+        @include justify-content(space-around);
+        width: 100%;
+    }
+}
+
+.grid-content_wrap {
+    width: 100%;
+}
+
+//Clase para the_content en acf
+.grid-content__item {
+    list-style: none;
+    margin-bottom: $gutterwidth;
+    // @include max-width(600px);
+
+    @media all and (min-width: $bp3) {
+        img {}
+    }
+
+    @media all and (min-width: 800px) {
+        width: calc(50% - #{$gutterwidth});
+    }
+}
+
+.grid__item {
+    list-style: none;
+    margin-bottom: $gutterwidth;
+
+    //magia!!
+    @media all and (min-width: $bp3) {
+        img {
+            width: inherit;
+            float: left;
+            margin-right: $gutterwidth;
+        }
+    }
+
+    @media all and (min-width: 1260px) {
+        width: calc(50% - #{$gutterwidth});
+    }
+}
+
+.grid-form {
+    padding: 0 $gutterwidth * 2;
+}
+
+.grid-form__item {
+    list-style: none;
+    margin-bottom: $gutterwidth;
+
+    @media all and (min-width: $bp3) {
+        width: calc(50% - #{$gutterwidth});
+    }
+
+    @media all and (min-width: 768px) {
+        width: calc(100% - #{$gutterwidth});
+    }
+
+    @media all and (min-width: 870px) {
+        width: calc(50% - #{$gutterwidth});
+    }
+
+    @media all and (min-width: $bp1) {
+        width: calc(33.33% - #{$gutterwidth});
+    }
+}
+
+// Parteme el layout en dos columnas. 
+// HugoGiraudel es un crack!
+.col-6-6 {
+    @include grid(6, 6);
+}

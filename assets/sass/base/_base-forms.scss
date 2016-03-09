@@ -1,0 +1,30 @@
+.input-client {
+	flex: 1 50%;
+}
+.input-text {
+  background-color: $site-main-bgcolor;
+}
+label {
+	margin-right: 10px;
+}
+input {
+	padding: 5px;
+  border-radius: 5px;
+  &:focus {
+    outline: none;
+  }
+}
+input[type=number] {
+	width: 50px;
+	text-align: center;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+	padding: 5px;
+}
+// $product
+// [class*=product] {
+//     &:hover {}
+// }

@@ -1,0 +1,78 @@
+
+/*------------------------------------*\
+    $TABLAS
+\*------------------------------------*/
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	th,
+	td {
+		padding: 5px;
+		vertical-align : middle;
+		text-align : left;
+	}
+
+	th {
+		font-weight : bold;
+	}
+
+	thead th {
+		vertical-align : bottom;
+	}
+
+	colgroup + thead tr:first-child th,
+	colgroup + thead tr:first-child td,
+	thead:first-child tr:first-child th,
+	thead:first-child tr:first-child td {
+		border-top : 0;
+	}
+
+	tbody + tbody {}
+
+	tbody tr td,
+	tbody tr th {
+		@include transition(background-color .25s 0 linear);
+	}
+
+	tbody tr:hover td,
+	tbody tr:hover th {
+	}
+}
+
+// CONDENSED ====================================================
+
+.table-condensed {
+
+th,
+td {
+	padding : 4px 5px; }
+}
+
+// BORDERED ====================================================
+
+.table-bordered {
+	border-left : 0;
+	border-collapse : separate;
+	*border-collapse : collapsed;
+
+	th,
+	td {
+	}
+
+	thead:first-child tr:first-child th,
+	tbody:first-child tr:first-child th,
+	tbody:first-child tr:first-child td {
+		border-top : 0;
+	}
+}
+
+// STRIPED ====================================================
+
+.table-striped {
+	tbody tr:nth-child(odd) td,
+	tbody tr:nth-child(odd) th {
+	}
+}

@@ -1,0 +1,58 @@
+/*
+Theme Name:         t0theme
+Theme URI:          http://sergiofores.net/
+Description:        WooCommerce Theme
+Version:            0.2
+Author:             Sergio Forés
+Author URI:         http://sergiofores.net
+
+License:            MIT License
+License URI:        http://opensource.org/licenses/MIT
+*/
+
+
+@import "config/reset";
+@import "config/variables";
+@import "config/placeholders";
+@import "config/mixins/images";
+@import "config/mixins/espaciados";
+@import "config/mixins/animations";
+@import "config/mixins/shapes";
+@import "config/mixins/flex";
+//
+// @import "config/mixins/grid";
+@import "base/base";
+@import "base/base-buttons";
+@import "base/base-forms";
+//
+@import "base/base-animations";
+@import "base/base-icons";
+@import "base/base-alerts";
+// @import "base/base-plugins";
+@import "base/base-tables";
+// @import "base/base-wp";
+// @import "base/base-fonts";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/aside";
+
+@import "layout/body";
+@import "layout/sidebar";
+@import "layout/posts";
+@import "blocks/brand";
+@import "blocks/widgets";
+// @import "blocks/social";
+@import "blocks/product";
+@import "blocks/galerias";
+// @import "blocks/panels";
+// @import "blocks/slider";
+// @import "addons/slick-theme";
+@import "addons/woocommerce";
+// @import "blocks/widgets";
+
+// @import "blocks/service";
+@import "blocks/navegacion";
+
+// Debug
+// @import "styleguide";
+// @import "debug";

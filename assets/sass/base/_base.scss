@@ -1,0 +1,303 @@
+// no te pases...
+@mixin max-width($max-width: $bp0) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-width;
+  width: 100%;
+}
+
+// bordes
+@mixin border_radius_semi_rounded($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+// tamano fuente
+@mixin font-size($font-size: $basefontsize) {
+  font-size: $font-size * 1px;
+  font-size: $font-size / $basefontsize * 1rem;
+  // Fallback ie
+}
+
+// Helper
+* {
+  // border: 1px solid white;
+}
+
+html {}
+
+body {
+  font-family: $basefont;
+  @include font-size(12);
+  font-weight: 400;
+  color: $textcolor;
+  letter-spacing: $baseletterspacing;
+  background-color: $color-alt3;
+  // @include background-image(bg,cover,no-repeat,center top, svg);
+  // background-image: url(#{$image-path}bg.svg);
+
+  @media screen and (min-width: $bp3) {
+    @include font-size(18);
+  }
+}
+
+a,
+a:visited {
+  color: $color-black;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: square;
+}
+
+// a[href*="http"] {
+//     &:hover:before {
+//         content: "#";
+//     }
+// }
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+img[src$=".svg"] {
+  max-width: auto;
+  width: 100%;
+  height: auto;
+}
+
+// Global
+::selection {
+  // amazing
+  // color: $color-black;
+  background-color: $color-alt2;
+  text-shadow: none;
+}
+
+::-webkit-input-placeholder {
+  line-height: $line-height-base;
+}
+
+mark {
+  background: lighten($color-base, 12);
+}
+
+/*------------------------------------*\
+    $TIPOGRAFiA
+\*------------------------------------*/
+
+// HEADINGS ====================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $altfont;
+  letter-spacing: $baseletterspacing - 1;
+  text-rendering: optimizelegibility;
+  font-weight: normal;
+  &.altheader {
+    @extend %text-right;
+  }
+}
+
+h1 small,
+h2 small,
+h3 small {
+  color: $color-alt;
+  @include font-size(32);
+  font-style: italic;
+  letter-spacing: $baseletterspacing;
+}
+
+@each $header, $margin-bot, $font-size, $line-height in (h1, 25, 40, 1) (h2, 3, 30, 1.1) (h3, 0, 30, 1) (h4, 0, 19, 3.4) (h5, 7, 19, 2) (h6, 7, 19, 1) {
+  #{$header}, .#{$header} {
+    margin-bottom: #{$margin-bot}px;
+    @include font-size($font-size);
+    line-height: $line-height;
+    // @extend %text-center;
+    span {
+      color: $color-alt2;
+    }
+  }
+}
+
+// TYPOGRAFiA ====================================================
+p,
+ol,
+ul,
+dl,
+address {
+  line-height: $line-height-base;
+  small {
+    font-style: normal;
+    line-height: $line-height-base / 4;
+  }
+}
+
+small {
+  @include font-size(14);
+}
+
+dd {
+  line-height: $line-height-base;
+}
+
+ul,
+ol {
+  margin: 0 0 $line-height-base 0;
+  padding: 0;
+}
+
+li ul,
+li ol {
+  margin: 0;
+}
+
+// listas
+ul {
+  list-style-type: none;
+}
+
+// blockquote
+blockquote {
+  padding-left: $padding_base / 4;
+  border-left: 5px solid $color-alt;
+  // @include font-size(15);
+  color: $color-black;
+  margin-left: 0;
+  // margin-top: $padding_base/2;
+  margin-bottom: 0;
+  // max-width: 400px;
+  // font-style: italic;
+  // @include max-width($bp3);
+  p {
+    // line-height: 1.3;
+  }
+  q {
+    @include font-size(32);
+  }
+}
+
+q {
+  quotes: none;
+}
+
+blockquote p::before,
+blockquote p::after,
+q:before,
+q:after {
+  content: "";
+}
+
+cite {
+  font-style: normal;
+}
+
+// definition lists
+
+dl,
+dd,
+dt {}
+
+dt {
+  // font-weight : bold;
+}
+
+// listas horizontales
+.list-inline {
+  > li {}
+}
+
+// text-level
+
+abbr[title] {
+  cursor: help;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+ins {
+  color: $textcolor;
+  text-decoration: none;
+}
+
+mark {
+  background-color: $color-base;
+  color: $textcolor;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: $codefont;
+  @include font-size(24);
+  line-height: $line-height-base;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+sub,
+sup {
+  position: relative;
+  @include font-size(8);
+  line-height: 0;
+  vertical-align: $line-height-base;
+}
+
+sup {
+  top: 1em;
+}
+
+sub {
+  bottom: -2.25em;
+}
+
+.active {}
+.show {
+    opacity: 1;
+}
+.hide {
+    opacity: 0;
+}
+
+// Scroll to top button
+.scroll {
+  position: relative;
+  width: 100%;
+  .scroll-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $padding_base;
+    .icon-arrow-up2 {
+      &:before {
+        @include font-size(32);
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+hr {
+  clear: both;
+  @extend %display-block;
+  padding: 0;
+  height: 1px;
+  border: 0;
+}

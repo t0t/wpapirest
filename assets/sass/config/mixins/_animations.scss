@@ -1,0 +1,56 @@
+// Animaciones
+// Glob Animation
+// ====================
+@mixin size-anim($size-anim) {
+  font-size: #{$size-anim}px;
+  width: 20em;
+  height: 30em;
+  animation: anim 1s steps(6) infinite;
+  background-size: 120em 100%;
+}
+// Mixins__Transforms
+@mixin transition($transition-property: all, $transition-time: 1.5s, $method: ease) {
+  transition: $transition-property $transition-time $method;
+}
+// Mixins__Animation
+@mixin animation($animation, $delay, $duration, $function, $count) {
+  animation-name: $animation;
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+  animation-timing-function: $function;
+}
+// .opacity(VALUE);
+@mixin opacity($opacity: 0.5) {
+  opacity: $opacity;
+}
+@mixin transition($seconds) {
+  transition: all $seconds;
+}
+@mixin scale($ratio) {
+  transform: scale($ratio);
+}
+@mixin translate($x, $y) {
+  transform: translate($x, $y);
+}
+@mixin translateX($x) {
+  transform: translateX($x);
+}
+@mixin translateY($y) {
+  transform: translateY($y);
+}
+@mixin skew($x, $y) {
+  transform: skew($x, $y);
+}
+@mixin translate3d($x, $y, $z) {
+  transform: translate3d($x, $y, $z);
+}
+@mixin rotateX($degrees) {
+  transform: rotateX($degrees);
+}
+@mixin rotateY($degrees) {
+  transform: rotateY($degrees);
+}
+@mixin rotate($degrees) {
+  transform: rotate($degrees);
+}

@@ -1,0 +1,9 @@
+@mixin justify-content($value: flex-start) {
+    justify-content: $value;
+}
+@mixin align-items($value: stretch) {
+    align-items: $value;
+}
+@mixin flex-direction($value: row) {
+    flex-direction: $value;
+}

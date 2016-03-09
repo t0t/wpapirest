@@ -1,0 +1,43 @@
+// WordPress Generated Classes
+// http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+
+.aligncenter {
+    @extend %display-block;
+}
+
+.alignleft,
+.alignright {
+    margin-bottom: $padding_base / 2;
+}
+
+figure.alignnone {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+}
+
+.wp-caption {
+    float: left;
+    max-width: 100%;
+}
+
+// Edit link
+.post-edit-link {}
+
+// Gallery shortcode
+.gallery-row {
+    padding: $padding_base / 2 0;
+}
+
+@media (min-width: $bp3) {
+    // Only float images if not on an extra small device like smartphones
+    .alignleft {
+        float: left;
+        margin-right: $padding_base / 2;
+    }
+
+    .alignright {
+        float: right;
+        margin-left: $padding_base / 2;
+    }
+}

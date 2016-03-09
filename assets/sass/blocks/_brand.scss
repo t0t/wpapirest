@@ -1,0 +1,111 @@
+.brand {
+    flex: 0 1 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    // align-items: center;
+    // flex: 0 200px;
+
+    @media screen and (min-width: 1177px) {
+        // margin-top: $padding_base;
+        // width: 150px;
+        // width: 50%;
+    }
+}
+
+.brand__logo {
+    // display: inherit;
+    // @include background-image(logo, contain, no-repeat, center, jpg);
+    // @include transition(4s);
+    // background-color: $color-white;
+    svg {
+      width: 30%;
+      // background-color: blue;
+      @media screen and (min-width: 600px) {
+        width: 100%;
+      }
+    }
+
+    path {
+        // fill: $color-black;
+
+        &.hoja1 {}
+
+        &.hoja2 {}
+
+        &.hoja3 {
+            @include animation(rotate, 0.1, 0.8s, linear, 1);
+        }
+
+        &.hoja4 {
+            @include animation(rotate, 0, 1s, linear, 1);
+        }
+
+        &.hoja5 {
+            @include animation(rotate, 0, 1.5s, linear, 1);
+        }
+
+        &.hoja6 {
+            @include animation(rotate, 0.8, 1.5s, linear, 1);
+        }
+
+        &.hoja7 {
+            @include animation(rotate, 1s, 2s, linear, 1);
+        }
+
+        &.hoja8 {
+            @include animation(rotate, 2s, 1s, linear, 1);
+        }
+    }
+
+    &:hover {
+        path {
+
+            &.hoja1 {
+                @include animation(rotate, 0, 0.5s, linear, 1);
+            }
+            &.hoja8 {
+                @include animation(rotate, 0, 0.5s, linear, 1);
+            }
+        }
+    }
+    @media screen and (min-width: $bp3) {}
+}
+
+.brand__name {
+    // margin-bottom: 0;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    // color: $color-black;
+    @media all and (max-width: 700px) {}
+}
+
+.brand__description {
+    display: none;
+}
+
+@media all and (min-width: $bp2) {
+    .fixed {
+        .brand,
+        .site-nav {
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .menu {
+            background-color: black;
+            // @include transition(2s);
+            // @include translateY(200px);
+       
+        }
+
+        .brand {
+            padding: $padding_base / 2 $padding_base;
+
+            path {
+                // fill: $color-alt;
+           
+            }
+        }
+    }
+}

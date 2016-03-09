@@ -1,0 +1,45 @@
+.page-transition.ng-enter{
+	transition:all 1s ease;opacity:0
+}
+
+.page-transition.ng-enter.ng-enter-active{
+opacity:1}
+
+.page-transition.ng-leave{
+opacity:0}
+
+.page-transition.ng-leave.ng-leave-active {
+	opacity:1
+}
+
+.transicion{
+	opacity:1;
+	transition:opacity 2s linear
+}
+
+.transicion.ng-hide{
+	opacity:0
+}
+
+.button {
+	transition: all 0.5s
+}
+
+.button.active + p {
+	transition:all 0.5s;
+	height:auto;
+	padding:25px;
+	opacity:1
+}
+.button {
+	@extend .icon-hamenu;
+	&.active {
+		@extend .icon-cross;
+	}
+	&.active + p {
+		transition:all 0.5s;
+		height:auto;
+		padding:25px;
+		opacity:1
+	}
+}

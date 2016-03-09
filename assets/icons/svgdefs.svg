@@ -1,0 +1,11 @@
+svg(
+  display="none"
+  width="0"
+  height="0"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+)
+  defs
+    symbol(id="icon-uniE618" viewBox="0 0 1024 1024")
+      title ok
+      path(class="path1") d="M850.872 325.262l-62.318-62.314-373.686 373.688-127.252-127.26-62.318 62.314 189.36 189.36 0.214-0.216 0.208 0.212z"

@@ -1,0 +1,31 @@
+
+// Por ejemplo: @include background-image(bg, cover, no-repeat, 0 0, svg);
+@mixin background-image($name, $size: false, $repeat: false, $position: false, $svg: false, $jpg: false, $gif: false) {
+    @if $size {
+        background-size: $size;
+    }
+
+    @if $position {
+        background-position: $position;
+    }
+
+    @if $repeat {
+        background-repeat: $repeat;
+    }
+
+    @if $jpg {
+        background-image: url(#{$image-path}#{$name}.#{$jpg});
+    }
+
+    @if $gif {
+        background-image: url(#{$image-path}#{$name}.#{$gif});
+    }
+
+    @if $svg {
+        background-image: url(#{$image-path}#{$name}.#{$svg});
+    }
+
+    .no-svg & {
+        background-image: url(#{$image-path}#{$name}.#{$fallback-extension});
+    }
+}

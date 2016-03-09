@@ -1,0 +1,51 @@
+// Componente Lista
+.list {
+    flex: 1;
+    text-align: center;
+}
+
+.list__item {
+    color: $white;
+}
+
+.list__item::before {
+    content: "\2714";
+    color: $color-base;
+}
+
+.list--sidebar {
+    margin-bottom: $gutterwidth;
+}
+
+.list--sidebar__item {
+    border-bottom: 1px solid $color-base;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.list-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.list-group--horizontal {
+    flex-direction: column;
+}
+
+.list--ordered {}
+
+.list--unordered {}
+
+.list--definition {}
+
+.list--inline {
+    margin-bottom: 0;
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+    }
+}

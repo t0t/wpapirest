@@ -1,0 +1,36 @@
+// Padding todo
+@mixin padding($padding: $gutterwidth) {
+  padding: $padding ($gutterwidth - 1);
+}
+
+// Padding arriba y abajo
+@mixin padding-vertical($padding: $gutterwidth) {
+  padding: $padding 0;
+}
+
+// Padding a los lados
+@mixin padding-horizontal($padding: $gutterwidth) {
+  padding: 0 $padding;
+}
+
+// Padding 4 lados
+@mixin padding($padding: $gutterwidth) {
+	padding: $padding;
+}
+
+// Padding abajo
+@mixin padding-bottom($padding: $gutterwidth) {
+  padding-bottom: $padding;
+}
+
+// Margenes abajo sólo
+@mixin margin-bottom($margin: $gutterwidth) {
+  margin-bottom: $margin;
+}
+
+//Margenes laterales
+@mixin margin-bottom($margin: $gutterwidth) {
+  margin-right: $margin;
+  margin-left: $margin;
+}
+

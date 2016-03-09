@@ -1,0 +1,18 @@
+header {}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 200px;
+  justify-content: space-around;
+  align-content: flex-start;
+  background-color: $color-alt;
+  padding: $padding_base / 6;
+
+  @media screen and (min-width: 1344px) {
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: inherit;
+    flex: 0 219px;
+  }
+}
