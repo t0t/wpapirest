@@ -29,7 +29,7 @@ b) La web puede estar alojada estáticamente por ejemplo en gh-pages y hacer las
 - Pensada como una Single Page Web App, de manera que reducimos las requests a las mínimas imprescindibles.
 - El build incluye minificación, concatenación de js y css.
 
-#### To do
+## To do
 - [ ] Routing
 - [ ] Decidir tipo de Hosting (Interno a WP o externo)
 - [ ] Refactorizar, refactorizar y refactorizar
