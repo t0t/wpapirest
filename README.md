@@ -11,14 +11,17 @@ Aunque en un principio utilice ReactJs para aprender, la idea es usar sólo Est�
 #### Entorno local
 
 - CSS preprocesado en SASS
-- NodeJs, NPM y Gulp (BrowserSync, Babel, Browserify...)
+- NodeJs, NPM y Gulp
+  - BrowserSync `gulp.task('watch', ['browser-sync'], function () {...}`
+  - Watchify, Babel, Browserify...
 - ES6 Module Pattern
 - MAMP Pro + Wordpress + WP-Api Plugin
 
 #### Hosting
 
-a) La web puede ser embebida dentro de la carpeta `themes` de una instalación Wordpress y consumir el Json desde "dentro".
-b) La web puede estar alojada estáticamente por ejemplo en gh-pages y hacer las peticiones XMLHttpRequest a la instalación de wordpress a otro servidor.
+a) La web puede ser embebida dentro de la carpeta `wp-content/themes` de una instalación y consumir el Json desde "dentro" de Wordpress.
+
+b) La web puede estar alojada estáticamente por ejemplo en gh-pages y hacer las peticiones XMLHttpRequest a la instalación de Wordpress de otro servidor.
 
 #### Performance matters
 - Pensada como una Single Page Web App, de manera que reducimos las requests a las mínimas imprescindibles.
