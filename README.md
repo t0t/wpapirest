@@ -6,12 +6,12 @@ Boilerplate de desarrollo ligero, simple, potente y escalable para la creación 
 
 Aunque en un principio utilice ReactJs para aprender, la idea es usar sólo Estándares web y javascript crudo. Especialmente en un mundo en el que las herramientas cambian rápidamente es importante no atarse a las modas y centrarse en la base sobre la que todo está construído.
 
-#### Entorno
+#### Entorno local
 
-- SASS (BEM, Flexbox...)
+- CSS preprocesado en SASS
 - NodeJs, NPM y Gulp (BrowserSync, Babel, Browserify...)
-- ES6 (Design Pattern, Modules, Classes...)
-- WP-Api REST
+- ES6 Module Pattern
+- MAMP Pro + Wordpress + WP-Api Plugin
 
 #### Performance matters
 - Pensada como una Single Page Web App, de manera que reducimos las requests a las mínimas imprescindibles.
