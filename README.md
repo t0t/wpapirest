@@ -1,4 +1,4 @@
-# Building a JavaScript theme using the WP-REST API
+# Sitio web usando WP-Api
 
 - SASS (BEM, Flexbox...)
 - Gulp (BrowserSync, Babel, Browserify...)
