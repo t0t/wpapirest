@@ -12,10 +12,12 @@ Aunque en un principio utilice ReactJs para aprender, la idea es usar s√≥lo Est√
 
 - CSS preprocesado en SASS
 - NodeJs, NPM y Gulp
-  - BrowserSync `gulp.task('watch', ['browser-sync'], function () {...}`
+  - BrowserSync
   - Watchify, Babel, Browserify...
 - ES6 Module Pattern
 - MAMP Pro + Wordpress + WP-Api Plugin
+
+`~ gulp watch` :dizzy:
 
 #### Hosting
 
