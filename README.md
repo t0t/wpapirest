@@ -32,7 +32,7 @@ b) La web puede estar alojada estáticamente por ejemplo en gh-pages y hacer las
 #### To do
 - [ ] Routing
 - [ ] Decidir tipo de Hosting (Interno a WP o externo)
-- [ ] Refactorizar, refactorizar y refactorizar 
+- [ ] Refactorizar, refactorizar y refactorizar
 
 
 ## Ramas
@@ -50,10 +50,10 @@ Absolutamente todo el código debe estar escrito en JavaScript, cumpliendo el es
 - [WP REST API](http://v2.wp-api.org/)
 - [Vanillapress](http://zgordon.github.io/vanillapress/)
 
-
-
-
-
-
-
-*Sergio Forés*
+~~~
+{
+  name: "Sergio Forés",
+  alias: "tot",
+  roll: "Front-end UI Designer"
+}
+~~~
