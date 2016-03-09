@@ -13,6 +13,10 @@ Aunque en un principio utilice ReactJs para aprender, la idea es usar sólo Est�
 - ES6 (Design Pattern, Modules, Classes...)
 - WP-Api REST
 
+#### Performance matters
+- Pensada como una Single Page Web App, de manera que reducimos las requests a las mínimas imprescindibles.
+- El build incluye minificación, concatenación de js y css.
+
 ## Ramas
 
 #### react
@@ -26,6 +30,12 @@ Absolutamente todo el código debe estar escrito en JavaScript, cumpliendo el es
 
 - [JavaScript for WordPress Master Course](https://javascriptforwp.com/)
 - [WP REST API](http://v2.wp-api.org/)
+- [Vanillapress](http://zgordon.github.io/vanillapress/)
+
+
+
+
+
 
 
 *Sergio Forés*
