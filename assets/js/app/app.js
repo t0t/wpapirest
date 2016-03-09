@@ -1,37 +1,5 @@
-(function(){
-var boton = document.querySelector('#m');
-console.log(boton);
-}.call(this));
+console.log('testtttttttttttt');
 
 
-    
-jQuery(document).ready(function($) {
-
-
-  // Ham Menu
-  $('#m').on('click', function () {
-    $('.site-nav__main').toggleClass('active');
-  });
-
-
-  console.log('_');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
+let a = "testtttt";
+console.log(a);

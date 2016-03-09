@@ -2,6 +2,8 @@
 
 Boilerplate de desarrollo ligero, simple, potente y escalable para la creación de sitios web 100% desde el Front-End usando Wordpress únicamente como una API para el Back-End y los contenidos.
 
+![Screenshot](./screenshot.jpg)
+
 #### Manifiesto
 
 Aunque en un principio utilice ReactJs para aprender, la idea es usar sólo Estándares web y javascript crudo. Especialmente en un mundo en el que las herramientas cambian rápidamente es importante no atarse a las modas y centrarse en la base sobre la que todo está construído.
@@ -12,6 +14,11 @@ Aunque en un principio utilice ReactJs para aprender, la idea es usar sólo Est�
 - NodeJs, NPM y Gulp (BrowserSync, Babel, Browserify...)
 - ES6 Module Pattern
 - MAMP Pro + Wordpress + WP-Api Plugin
+
+#### Hosting
+
+a) La web puede ser embebida dentro de la carpeta `themes` de una instalación Wordpress y consumir el Json desde "dentro".
+b) La web puede estar alojada estáticamente por ejemplo en gh-pages y hacer las peticiones XMLHttpRequest a la instalación de wordpress a otro servidor.
 
 #### Performance matters
 - Pensada como una Single Page Web App, de manera que reducimos las requests a las mínimas imprescindibles.
