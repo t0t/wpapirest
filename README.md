@@ -50,6 +50,7 @@ Absolutamente todo el código debe estar escrito en JavaScript, cumpliendo el es
 - [WP REST API](http://v2.wp-api.org/)
 - [Vanillapress](http://zgordon.github.io/vanillapress/)
 
+
 ~~~
 {
   name: "Sergio Forés",
