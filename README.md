@@ -6,7 +6,7 @@ Boilerplate de desarrollo ligero, simple, potente y escalable para la creación 
 
 #### Manifiesto
 
-Aunque en un principio utilice ReactJs para aprender, la idea es usar sólo Estándares web y javascript crudo. Especialmente en un mundo en el que las herramientas cambian rápidamente es importante no atarse a las modas y centrarse en la base sobre la que todo está construído.
+Aunque en un principio utilice ReactJs para aprender, la idea es usar sólo Estándares web y javascript crudo. Especialmente en un mundo en el que las herramientas cambian rápidamente es importante no atarse a las modas y centrarse en la base más sólida. De esta manera te mantienes liviano y te puedes adaptar rápidamente a los cambios.
 
 #### Entorno local
 
@@ -23,7 +23,7 @@ a) La web puede ser embebida dentro de la carpeta `wp-content/themes` de una ins
 
 b) La web puede estar alojada estáticamente por ejemplo en gh-pages y hacer las peticiones XMLHttpRequest a la instalación de Wordpress de otro servidor.
 
-#### Performance matters
+#### Performance
 - Pensada como una Single Page Web App, de manera que reducimos las requests a las mínimas imprescindibles.
 - El build incluye minificación, concatenación de js y css.
 
