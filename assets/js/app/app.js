@@ -1,37 +1,43 @@
-// MODEL
+// MODELO
 class Xhr {
-  constructor (name) {
-    this.name = name;
-    this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
-    this.url = this.baseUrl+name;
-    this.xhr = new XMLHttpRequest();
-  }
 
-  get () {
-    if (this.readyState === 4) {
-      let posts = JSON.parse(this.responseText);
-      for (var i = 0; i < 3; i++) {
-        console.log(posts[i].title);
-        console.log(posts[i].content);
-      }
+    constructor( name ){
+      this.name = name;
+      this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
+      this.url = this.baseUrl+name;
     }
-  }
+
+    get() {
+      return new Promise( () => {
+        var xhr = new XMLHttpRequest();
+        xhr.open( 'GET', this.url );
+        xhr.addEventListener( "readystatechange", () => {
+          if ( this.readyState === 4 ) {
+            JSON.parse(xhr.responseText);
+          }
+        });
+        xhr.send();
+      });
+    }
+
+    // get() {
+    //     return this.send();
+    // }
 
 }
 
-// CONTROLLER
-let posts = new Xhr('posts');
-posts.xhr.addEventListener( "readystatechange", posts.get );
-posts.xhr.open( "GET", posts.url );
-posts.xhr.send();
+// CONTROLADOR
+let posts = new Xhr( 'posts' );
+console.log( posts.url );
+console.log( posts.get() );
 
-console.log(posts.get());
+let pages = new Xhr( 'pages' );
+console.log( pages.url );
+console.log( pages.get() );
 
-let pages = new Xhr('pages');
-console.log(pages.url);
 
-// VIEW
-let elMain = document.getElementById('main');
-let elDiv = document.createElement('div');
+// VISTA
+let elMain = document.getElementById( 'main' );
+let elDiv = document.createElement( 'div' );
 elDiv.innerHTML = posts.url;
-elMain.appendChild(elDiv);
+elMain.appendChild( elDiv );

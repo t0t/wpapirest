@@ -17,7 +17,7 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-// MODEL
+// MODELO
 
 var Xhr = function () {
   function Xhr(name) {
@@ -26,38 +26,45 @@ var Xhr = function () {
     this.name = name;
     this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
     this.url = this.baseUrl + name;
-    this.xhr = new XMLHttpRequest();
   }
 
   _createClass(Xhr, [{
     key: "get",
     value: function get() {
-      if (this.readyState === 4) {
-        var _posts = JSON.parse(this.responseText);
-        for (var i = 0; i < 3; i++) {
-          console.log(_posts[i].title);
-          console.log(_posts[i].content);
-        }
-      }
+      var _this = this;
+
+      return new Promise(function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', _this.url);
+        xhr.addEventListener("readystatechange", function () {
+          if (_this.readyState === 4) {
+            JSON.parse(xhr.responseText);
+          }
+        });
+        xhr.send();
+      });
     }
+
+    // get() {
+    //     return this.send();
+    // }
+
   }]);
 
   return Xhr;
 }();
 
-// CONTROLLER
+// CONTROLADOR
 
 var posts = new Xhr('posts');
-posts.xhr.addEventListener("readystatechange", posts.get);
-posts.xhr.open("GET", posts.url);
-posts.xhr.send();
-
+console.log(posts.url);
 console.log(posts.get());
 
 var pages = new Xhr('pages');
 console.log(pages.url);
+console.log(pages.get());
 
-// VIEW
+// VISTA
 var elMain = document.getElementById('main');
 var elDiv = document.createElement('div');
 elDiv.innerHTML = posts.url;
