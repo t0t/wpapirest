@@ -5,28 +5,34 @@ class Xhr {
     this.name = name;
     this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
     this.url = this.baseUrl+name;
+    this.data = this.json;
   }
 
   get json() {
+    let data = [];
     let xhr = new XMLHttpRequest();
     xhr.open( 'GET', this.url );
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
-        let data = JSON.parse(xhr.responseText);
-        // console.log(data);
-        return data;
+        data = JSON.parse(xhr.responseText);
+        console.log(data);
       }
     }
     xhr.send();
+    return data;
   }
 }
 
 // CONTROLADOR
 let posts = new Xhr( 'posts' );
-let iteratePosts = posts.json;
-for (post of iteratePosts) {
-  console.log(post.title);
-}
+console.log(posts.json);
+// let iteratePosts = posts.json;
+// for (var i = 0; i < iteratePosts.length; i++) {
+//   console.log(iteratePosts[i].title);
+// }
+// for (post of iteratePosts) {
+//   console.log(post.title);
+// }
 
 // let pages = new Xhr( 'pages' );
 // console.log( pages.json );

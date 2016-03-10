@@ -26,21 +26,23 @@ var Xhr = function () {
     this.name = name;
     this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
     this.url = this.baseUrl + name;
+    this.data = this.json;
   }
 
   _createClass(Xhr, [{
     key: 'json',
     get: function get() {
+      var data = [];
       var xhr = new XMLHttpRequest();
       xhr.open('GET', this.url);
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-          var data = JSON.parse(xhr.responseText);
-          // console.log(data);
-          return data;
+          data = JSON.parse(xhr.responseText);
+          console.log(data);
         }
       };
       xhr.send();
+      return data;
     }
   }]);
 
@@ -50,93 +52,75 @@ var Xhr = function () {
 // CONTROLADOR
 
 var posts = new Xhr('posts');
-var iteratePosts = posts.json;
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
+console.log(posts.json);
+// let iteratePosts = posts.json;
+// for (var i = 0; i < iteratePosts.length; i++) {
+//   console.log(iteratePosts[i].title);
+// }
+// for (post of iteratePosts) {
+//   console.log(post.title);
+// }
 
-try {
-  for (var _iterator = iteratePosts[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    post = _step.value;
+// let pages = new Xhr( 'pages' );
+// console.log( pages.json );
 
-    console.log(post.title);
-  }
+// let pages = new Xhr( 'pages' );
+// console.log( pages.url );
+// console.log( `Paginas: ${pages.api}` );
 
-  // let pages = new Xhr( 'pages' );
-  // console.log( pages.json );
+// MODEL
+// let baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
+// let postsUrl = baseUrl + "posts";
+//
+// let xhr = new XMLHttpRequest();
+//
+// function getPosts () {
+//   if (this.readyState === 4) {
+//     let posts = JSON.parse(this.responseText);
+//     for (var i = 0; i < posts.length; i++) {
+//       console.log(posts[i].title);
+//       console.log(posts[i].content);
+//     }
+//   }
+// }
+//
+// xhr.addEventListener( "readystatechange", getPosts );
+// xhr.open( "GET", postsUrl );
+// xhr.send();
 
-  // let pages = new Xhr( 'pages' );
-  // console.log( pages.url );
-  // console.log( `Paginas: ${pages.api}` );
+// class Xhr {
+//   constructor (name) {
+//     this.name = name;
+//     this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
+//     this.url = this.baseUrl+this.name;
+//     this.xhr = new XMLHttpRequest();
+//   }
+//
+//   get() {
+//     if (this.readyState === 4) {
+//       let posts = JSON.parse(this.responseText);
+//       for (var i = 0; i < posts.length; i++) {
+//         console.log(posts[i].title);
+//         console.log(posts[i].content);
+//       }
+//     }
+//   }
+//
+// }
+//
+// let posts = new Xhr('posts');
+// posts.xhr.addEventListener( "readystatechange", posts.get() );
+// posts.xhr.open( "GET", posts.url );
+// posts.xhr.send();
 
-  // MODEL
-  // let baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
-  // let postsUrl = baseUrl + "posts";
-  //
-  // let xhr = new XMLHttpRequest();
-  //
-  // function getPosts () {
-  //   if (this.readyState === 4) {
-  //     let posts = JSON.parse(this.responseText);
-  //     for (var i = 0; i < posts.length; i++) {
-  //       console.log(posts[i].title);
-  //       console.log(posts[i].content);
-  //     }
-  //   }
-  // }
-  //
-  // xhr.addEventListener( "readystatechange", getPosts );
-  // xhr.open( "GET", postsUrl );
-  // xhr.send();
+// console.log(posts.get());
+//
+// let pages = new Xhr('pages');
+// console.log(pages.url);
 
-  // class Xhr {
-  //   constructor (name) {
-  //     this.name = name;
-  //     this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
-  //     this.url = this.baseUrl+this.name;
-  //     this.xhr = new XMLHttpRequest();
-  //   }
-  //
-  //   get() {
-  //     if (this.readyState === 4) {
-  //       let posts = JSON.parse(this.responseText);
-  //       for (var i = 0; i < posts.length; i++) {
-  //         console.log(posts[i].title);
-  //         console.log(posts[i].content);
-  //       }
-  //     }
-  //   }
-  //
-  // }
-  //
-  // let posts = new Xhr('posts');
-  // posts.xhr.addEventListener( "readystatechange", posts.get() );
-  // posts.xhr.open( "GET", posts.url );
-  // posts.xhr.send();
+// CONTROLLER
 
-  // console.log(posts.get());
-  //
-  // let pages = new Xhr('pages');
-  // console.log(pages.url);
-
-  // CONTROLLER
-
-  // VIEW
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator.return) {
-      _iterator.return();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
-  }
-}
-
+// VIEW
 var elMain = document.getElementById('main');
 var elDiv = document.createElement('div');
 elDiv.innerHTML = " Loremm";
