@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-"use strict";
+'use strict';
 
 var _createClass = function () {
   function defineProperties(target, props) {
@@ -29,26 +29,19 @@ var Xhr = function () {
   }
 
   _createClass(Xhr, [{
-    key: "get",
-    value: function get() {
-      var _this = this;
-
-      return new Promise(function () {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', _this.url);
-        xhr.addEventListener("readystatechange", function () {
-          if (_this.readyState === 4) {
-            JSON.parse(xhr.responseText);
-          }
-        });
-        xhr.send();
-      });
+    key: 'json',
+    get: function get() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', this.url);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          var data = JSON.parse(xhr.responseText);
+          // console.log(data);
+          return data;
+        }
+      };
+      xhr.send();
     }
-
-    // get() {
-    //     return this.send();
-    // }
-
   }]);
 
   return Xhr;
@@ -57,17 +50,96 @@ var Xhr = function () {
 // CONTROLADOR
 
 var posts = new Xhr('posts');
-console.log(posts.url);
-console.log(posts.get());
+var iteratePosts = posts.json;
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
 
-var pages = new Xhr('pages');
-console.log(pages.url);
-console.log(pages.get());
+try {
+  for (var _iterator = iteratePosts[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    post = _step.value;
 
-// VISTA
+    console.log(post.title);
+  }
+
+  // let pages = new Xhr( 'pages' );
+  // console.log( pages.json );
+
+  // let pages = new Xhr( 'pages' );
+  // console.log( pages.url );
+  // console.log( `Paginas: ${pages.api}` );
+
+  // MODEL
+  // let baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
+  // let postsUrl = baseUrl + "posts";
+  //
+  // let xhr = new XMLHttpRequest();
+  //
+  // function getPosts () {
+  //   if (this.readyState === 4) {
+  //     let posts = JSON.parse(this.responseText);
+  //     for (var i = 0; i < posts.length; i++) {
+  //       console.log(posts[i].title);
+  //       console.log(posts[i].content);
+  //     }
+  //   }
+  // }
+  //
+  // xhr.addEventListener( "readystatechange", getPosts );
+  // xhr.open( "GET", postsUrl );
+  // xhr.send();
+
+  // class Xhr {
+  //   constructor (name) {
+  //     this.name = name;
+  //     this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
+  //     this.url = this.baseUrl+this.name;
+  //     this.xhr = new XMLHttpRequest();
+  //   }
+  //
+  //   get() {
+  //     if (this.readyState === 4) {
+  //       let posts = JSON.parse(this.responseText);
+  //       for (var i = 0; i < posts.length; i++) {
+  //         console.log(posts[i].title);
+  //         console.log(posts[i].content);
+  //       }
+  //     }
+  //   }
+  //
+  // }
+  //
+  // let posts = new Xhr('posts');
+  // posts.xhr.addEventListener( "readystatechange", posts.get() );
+  // posts.xhr.open( "GET", posts.url );
+  // posts.xhr.send();
+
+  // console.log(posts.get());
+  //
+  // let pages = new Xhr('pages');
+  // console.log(pages.url);
+
+  // CONTROLLER
+
+  // VIEW
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion && _iterator.return) {
+      _iterator.return();
+    }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
+}
+
 var elMain = document.getElementById('main');
 var elDiv = document.createElement('div');
-elDiv.innerHTML = posts.url;
+elDiv.innerHTML = " Loremm";
 elMain.appendChild(elDiv);
 
 },{}]},{},[1]);
