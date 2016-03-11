@@ -1,6 +1,6 @@
 # Sitio web usando WP-Api :sunrise_over_mountains:
 
-Boilerplate de desarrollo ligero, simple, potente y escalable para la creación de sitios web 100% desde el Front-End usando Wordpress únicamente como una API para el Back-End y los contenidos.
+Boilerplate de desarrollo ligero, simple, potente y escalable para la creación de sitios web 100% desde el Front-End usando Wordpress únicamente como una API para el Back-End y los contenidos. (Headless CMS)
 
 ![Screenshot](./screenshot.jpg)
 
