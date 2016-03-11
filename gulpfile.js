@@ -71,7 +71,7 @@ gulp.task( 'data', function () {
 // bundle
 function bundle (bundler) {
   return bundler
-    .transform(babelify, {presets: ['es2015']})
+    .transform(babelify, { presets: ['es2015'] })
     .bundle()
     .on('error', function (e) {
       gutil.log(e.message);

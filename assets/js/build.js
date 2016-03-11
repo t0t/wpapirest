@@ -17,54 +17,54 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-// MODELO
+// MODEL
+var BASE_URL = 'http://dev.wpapirest.com/wp-json/wp/v2/';
 
 var Xhr = function () {
   function Xhr(name) {
     _classCallCheck(this, Xhr);
 
-    this.name = name;
-    this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
-    this.url = this.baseUrl + name;
-    this.data = this.json;
+    this.url = '' + BASE_URL + name;
   }
 
   _createClass(Xhr, [{
-    key: 'json',
-    get: function get() {
+    key: 'data',
+    value: function data() {
+      var _this = this;
 
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', this.url);
-      xhr.onreadystatechange = jsonGot;
-      xhr.send();
-
-      function jsonGot() {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var json = JSON.parse(xhr.responseText);
-            console.log(json);
-            return json;
+      return new Promise(function (resolve) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', _this.url);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            resolve(JSON.parse(xhr.responseText));
+            console.log(JSON.parse(xhr.responseText));
           }
-        }
-      }
+        };
+        xhr.send();
+      });
     }
   }]);
 
   return Xhr;
 }();
 
-// CONTROLADOR
+// CONTROLLER
 
-var posts = new Xhr('posts');
-// let p = posts.json;
-console.log(posts);
-console.log(posts.data);
-// console.log(posts.json(this.data));
+var allPosts = new Xhr('posts');
+// debugger;
+allPosts.data().then(function (results) {
+  return results.posts.map(function (p) {
+    return console.log(p.id);
+  });
+});
 
-// VISTA
+// VIEW
 var elMain = document.getElementById('main');
 var elDiv = document.createElement('div');
 elDiv.innerHTML = " Loremm";
 elMain.appendChild(elDiv);
+
+//kangax.github.io/compat-table/es6/
 
 },{}]},{},[1]);
