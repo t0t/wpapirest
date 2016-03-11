@@ -14,9 +14,8 @@ Aunque en un principio utilice ReactJs para aprender, la idea es usar sÃ³lo EstÃ
 - NodeJs, NPM y Gulp
   - BrowserSync
   - Watchify, Babel, Browserify...
-  - Deploy to gh-pages `> gulp deploy`
+  - Deploy to gh-pages `~ gulp deploy`
 - ES6 Module Pattern
-- MAMP Pro + Wordpress + WP-Api Plugin
 
 `~ gulp watch` :dizzy:
 
