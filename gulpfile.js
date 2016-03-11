@@ -15,7 +15,7 @@ var watchify        =     require('watchify');
 var babelify        =     require('babelify');
 var browserSync     =     require('browser-sync').create();
 
-// var ghPages         =     require('gulp-gh-pages');
+var ghPages         =     require('gulp-gh-pages');
 // var del             =     require('del');
 // var data            =     require('gulp-data');
 // var concat          =     require("gulp-concat");
@@ -38,34 +38,34 @@ gulp.task( 'sass', function () {
 /*
   Images
 */
-// gulp.task( 'img', function () {
-//   gulp.src( './dev/img/*.jpg' )
-//     .pipe( gulp.dest( './prod/img' ) )
-// });
+gulp.task( 'img', function () {
+  gulp.src( './assets/img/*.jpg' )
+    .pipe( gulp.dest( './dist/assets/img' ) )
+});
 
 /*
   Icons
 */
 gulp.task( 'icons', function () {
   gulp.src( './assets/icons/*.svg' )
-    .pipe( gulp.dest( './assets/icons' ) )
+    .pipe( gulp.dest( './dist/assets/icons' ) )
 });
 
 /*
   Data
 */
-gulp.task( 'data', function () {
-  gulp.src( './assets/data/' )
-    .pipe( gulp.dest( './assets/data/' ) )
-});
+// gulp.task( 'data', function () {
+//   gulp.src( './assets/data/' )
+//     .pipe( gulp.dest( './assets/data/' ) )
+// });
 
 /*
   html
 */
 gulp.task( 'html', function() {
-  return gulp.src( 'dev/*.html' )
+  return gulp.src( './*.html' )
     .pipe( htmlmin({collapseWhitespace: true}))
-    .pipe( gulp.dest( 'prod' ))
+    .pipe( gulp.dest( 'dist' ))
 });
 
 // bundle
@@ -94,16 +94,16 @@ gulp.task( "js", function () {
 gulp.task( 'minijs', function () {
   return gulp.src( 'assets/js/build.js' )
     .pipe( uglify() )
-    .pipe( gulp.dest( 'assets/js' ));
+    .pipe( gulp.dest( 'dist/assets/js' ));
 });
 
 /*
   Compress CSS
 */
 gulp.task( 'minicss', function() {
-    return gulp.src( 'assets/css/main.css' )
-        .pipe( cssnano() )
-        .pipe( gulp.dest( 'assets/css/' ));
+    return gulp.src( 'assets/css/style.css' )
+      .pipe( cssnano() )
+      .pipe( gulp.dest( 'dist/assets/css/' ));
 });
 
 /*
@@ -130,12 +130,12 @@ gulp.task('browser-sync', function() {
 /*
   Build
 */
-gulp.task('build', [ 'sass', 'js' ]);
+gulp.task('build', [ 'sass', 'minicss', 'minijs', 'html', 'js', 'img' ]);
 
 /*
   Deploy to Github
 */
-gulp.task( 'deploy', [ 'minicss', 'minijs', 'html', 'icons', 'data' ], function () {
+gulp.task( 'deploy', [ 'minicss', 'minijs', 'img', 'html', 'icons' ], function () {
   return gulp.src( './dist/**/*' )
     .pipe( ghPages() );
 });
