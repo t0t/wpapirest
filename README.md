@@ -32,7 +32,7 @@ b) La web puede estar alojada estáticamente por ejemplo en gh-pages y hacer las
 
 ## To do
 - [ ] Routing
-- [ ] Decidir tipo de Hosting (Interno a WP o externo)
+- [x] Headless CMS
 - [ ] Refactorizar, refactorizar y refactorizar
 
 
