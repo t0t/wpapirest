@@ -1,43 +1,47 @@
-// MODELO
+// MODEL
+const BASE_URL = 'http://energyfruits.es/wp-json/wp/v2/';
+
 class Xhr {
-
   constructor( name ) {
-    this.name = name;
-    this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
-    this.url = this.baseUrl+name;
-    this.data = this.json;
+    this.url = `${BASE_URL}${name}/`;
   }
-
-  get json() {
-
-    let xhr = new XMLHttpRequest();
-    xhr.open( 'GET', this.url );
-    xhr.onreadystatechange = jsonGot;
-    xhr.send();
-
-    function jsonGot() {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          let json = JSON.parse(xhr.responseText);
-          console.log(json);
-          return json;
+  data() {
+    return new Promise( resolve => {
+      let xhr = new XMLHttpRequest();
+      xhr.open( 'GET', this.url );
+      xhr.onreadystatechange = () => {
+        if ( xhr.readyState === 4 ) {
+          resolve( JSON.parse( xhr.responseText ) );
+          console.log(JSON.parse( xhr.responseText ) );
         }
-      }
-    }
-
+      };
+      xhr.send();
+    });
   }
-
 }
 
-// CONTROLADOR
-let posts = new Xhr( 'posts' );
-// let p = posts.json;
-console.log(posts);
-console.log(posts.data);
-// console.log(posts.json(this.data));
+// CONTROLLER
+let allPosts = new Xhr( 'posts' );
+allPosts.data().then( function (results) {
+  for (let post of results) {
+    post.link;
+    console.log( post.link );
+  }
+});
 
-// VISTA
-let elMain = document.getElementById('main');
-let elDiv = document.createElement('div');
-elDiv.innerHTML = " Loremm";
-elMain.appendChild(elDiv);
+let allPages = new Xhr( 'pages' );
+allPages.data().then( function (results) {
+  for (let page of results) {
+    page.title;
+    console.log( page.title );
+  }
+});
+
+
+// VIEW
+function render() {
+  let elMain = document.getElementById( 'main' );
+  let elDiv = document.createElement( 'div' );
+  elDiv.innerHTML = 'allPosts';
+  elMain.appendChild( elDiv );
+}

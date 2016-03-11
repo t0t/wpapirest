@@ -17,54 +17,104 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-// MODELO
+// MODEL
+var BASE_URL = 'http://energyfruits.es/wp-json/wp/v2/';
 
 var Xhr = function () {
   function Xhr(name) {
     _classCallCheck(this, Xhr);
 
-    this.name = name;
-    this.baseUrl = "http://dev.wpapirest.com/wp-json/wp/v2/";
-    this.url = this.baseUrl + name;
-    this.data = this.json;
+    this.url = '' + BASE_URL + name + '/';
   }
 
   _createClass(Xhr, [{
-    key: 'json',
-    get: function get() {
+    key: 'data',
+    value: function data() {
+      var _this = this;
 
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', this.url);
-      xhr.onreadystatechange = jsonGot;
-      xhr.send();
-
-      function jsonGot() {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var json = JSON.parse(xhr.responseText);
-            console.log(json);
-            return json;
+      return new Promise(function (resolve) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', _this.url);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            resolve(JSON.parse(xhr.responseText));
+            console.log(JSON.parse(xhr.responseText));
           }
-        }
-      }
+        };
+        xhr.send();
+      });
     }
   }]);
 
   return Xhr;
 }();
 
-// CONTROLADOR
+// CONTROLLER
 
-var posts = new Xhr('posts');
-// let p = posts.json;
-console.log(posts);
-console.log(posts.data);
-// console.log(posts.json(this.data));
+var allPosts = new Xhr('posts');
+allPosts.data().then(function (results) {
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
 
-// VISTA
-var elMain = document.getElementById('main');
-var elDiv = document.createElement('div');
-elDiv.innerHTML = " Loremm";
-elMain.appendChild(elDiv);
+  try {
+    for (var _iterator = results[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var post = _step.value;
+
+      post.link;
+      console.log(post.link);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+});
+
+var allPages = new Xhr('pages');
+allPages.data().then(function (results) {
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
+
+  try {
+    for (var _iterator2 = results[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      var page = _step2.value;
+
+      page.title;
+      console.log(page.title);
+    }
+  } catch (err) {
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+        _iterator2.return();
+      }
+    } finally {
+      if (_didIteratorError2) {
+        throw _iteratorError2;
+      }
+    }
+  }
+});
+
+// VIEW
+function render() {
+  var elMain = document.getElementById('main');
+  var elDiv = document.createElement('div');
+  elDiv.innerHTML = 'allPosts';
+  elMain.appendChild(elDiv);
+}
 
 },{}]},{},[1]);

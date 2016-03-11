@@ -62,11 +62,11 @@ gulp.task( 'data', function () {
 /*
   html
 */
-// gulp.task( 'html', function() {
-//   return gulp.src( 'dev/*.html' )
-//     .pipe( htmlmin({collapseWhitespace: true}))
-//     .pipe( gulp.dest( 'prod' ))
-// });
+gulp.task( 'html', function() {
+  return gulp.src( 'dev/*.html' )
+    .pipe( htmlmin({collapseWhitespace: true}))
+    .pipe( gulp.dest( 'prod' ))
+});
 
 // bundle
 function bundle (bundler) {
@@ -122,8 +122,9 @@ gulp.task('watch', ['browser-sync'], function () {
 
 gulp.task('browser-sync', function() {
   browserSync.init(['./assets/css/style.css','./assets/js/build.js'], {
-    proxy: 'dev.wpapirest.com/',
-    host: 'localhost'
+    server: {
+      baseDir: "./"
+    }
   });
 });
 /*
@@ -134,7 +135,7 @@ gulp.task('build', [ 'sass', 'js' ]);
 /*
   Deploy to Github
 */
-// gulp.task( 'deploy', [ 'minicss', 'minijs', 'icons', 'data' ], function () {
-//   return gulp.src( './dist/**/*' )
-//     .pipe( ghPages() );
-// });
+gulp.task( 'deploy', [ 'minicss', 'minijs', 'html', 'icons', 'data' ], function () {
+  return gulp.src( './dist/**/*' )
+    .pipe( ghPages() );
+});
