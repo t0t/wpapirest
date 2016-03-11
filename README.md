@@ -19,11 +19,9 @@ Aunque en un principio utilice ReactJs para aprender, la idea es usar sólo Est�
 
 `~ gulp watch` :dizzy:
 
-#### Hosting
+#### Headless CMS
 
-a) La web puede ser embebida dentro de la carpeta `wp-content/themes` de una instalación y consumir el Json desde "dentro" de Wordpress.
-
-b) La web puede estar alojada estáticamente por ejemplo en gh-pages y hacer las peticiones `XMLHttpRequest` a la instalación de Wordpress de otro servidor.
+Consume datos en el lado del cliente por medio de una API REST!
 
 #### Performance
 - Pensada como una Single Page Web App, de manera que reducimos las requests a las mínimas imprescindibles.
