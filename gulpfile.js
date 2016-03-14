@@ -85,7 +85,7 @@ function bundle (bundler) {
   JS
 */
 gulp.task( "js", function () {
-  return bundle(browserify('assets/js/app/app.js'));
+  return bundle(browserify('assets/js/app/index.js'));
 });
 
 /*
@@ -111,7 +111,7 @@ gulp.task( 'minicss', function() {
 */
 gulp.task('watch', ['browser-sync'], function () {
 
-  var watcher = watchify( browserify( './assets/js/app/app.js', watchify.args ));
+  var watcher = watchify( browserify( './assets/js/app/index.js', watchify.args ));
   bundle(watcher);
   watcher.on('update', function () {
     bundle(watcher);
